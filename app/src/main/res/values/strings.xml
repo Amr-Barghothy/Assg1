@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Respiratory system</string>
+    <string name="nose">Nose</string>
+    <string name="mouth">Mouth</string>
+    <string name="trachea">Trachea</string>
+    <string name="lungs">Lungs</string>
+    <string name="diaphragm">Diaphragm</string>
+    <string name="please_write_the_name_of_each_part">please write the name of each part</string>
+    <string name="check">Check</string>
+    <string name="rest">Rest</string>
+</resources>

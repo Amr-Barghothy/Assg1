@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="textBg">
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:ems">10</item>
+        <item name="android:background">@drawable/border</item>
+    </style>
+</resources>
