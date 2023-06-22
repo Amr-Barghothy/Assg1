@@ -1,13 +1,17 @@
 package com.example.assg1;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.assg1.respiratory_system.RespiratorySystem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 public class MainActivity extends AppCompatActivity {
     //    EditText NoseText;
@@ -16,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     boolean TracheaCheck;
     boolean LungsCheck;
     boolean DiaphragmCheck;
-
 
     @SuppressLint({"ResourceType", "SetTextI18n"})
     @Override
@@ -37,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         TextView hintLabel = findViewById(R.id.hintLabel);
         TextView explainLabel = findViewById(R.id.explainLabel);
         Button check = findViewById(R.id.check);
+        Button goTo = findViewById(R.id.goTo);
         Button rest = findViewById(R.id.rest);
+
 
         check.setOnClickListener(v -> {
             NoseCheck = NoseText.getText().toString().equals("Nose") || NoseText.getText().toString().equals("nose");
@@ -51,19 +56,20 @@ public class MainActivity extends AppCompatActivity {
             DiaphragmCheck = DiaphragmText.getText().toString().equals("Diaphragm") || DiaphragmText.getText().toString().equals("diaphragm");
 
             if (NoseCheck && MouthCheck && TracheaCheck && LungsCheck && DiaphragmCheck) {
-                NoseText.setVisibility(View.GONE);
-                MouthText.setVisibility(View.GONE);
-                TracheaText.setVisibility(View.GONE);
-                LungsText.setVisibility(View.GONE);
-                DiaphragmText.setVisibility(View.GONE);
-
-                NoseButton.setVisibility(View.VISIBLE);
-                MouthButton.setVisibility(View.VISIBLE);
-                TracheaButton.setVisibility(View.VISIBLE);
-                LungsButton.setVisibility(View.VISIBLE);
-                DiaphragmButton.setVisibility(View.VISIBLE);
-                explainLabel.setVisibility(View.VISIBLE);
+//                NoseText.setVisibility(View.GONE);
+//                MouthText.setVisibility(View.GONE);
+//                TracheaText.setVisibility(View.GONE);
+//                LungsText.setVisibility(View.GONE);
+//                DiaphragmText.setVisibility(View.GONE);
+//
+//                NoseButton.setVisibility(View.VISIBLE);
+//                MouthButton.setVisibility(View.VISIBLE);
+//                TracheaButton.setVisibility(View.VISIBLE);
+//                LungsButton.setVisibility(View.VISIBLE);
+//                DiaphragmButton.setVisibility(View.VISIBLE);
+//                explainLabel.setVisibility(View.VISIBLE);
                 check.setVisibility(View.GONE);
+                goTo.setVisibility(View.VISIBLE);
                 rest.setVisibility(View.GONE);
                 hintLabel.setText("Select the part you want to learn about");
             }
@@ -100,10 +106,15 @@ public class MainActivity extends AppCompatActivity {
             DiaphragmText.setText("");
         });
 
-        NoseButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getNose()));
-        MouthButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getMouth()));
-        TracheaButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getTrachea()));
-        LungsButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getLungs()));
-        DiaphragmButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getDiaphragm()));
+        goTo.setOnClickListener(v -> {
+            Intent myIntent = new Intent(this, MainActivity2.class);
+            startActivity(myIntent);
+        });
+
+//        NoseButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getNose2()));
+//        MouthButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getMouth2()));
+//        TracheaButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getTrachea2()));
+//        LungsButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getLungs2()));
+//        DiaphragmButton.setOnClickListener(v -> explainLabel.setText(Rsystem.getDiaphragm2()));
     }
 }
