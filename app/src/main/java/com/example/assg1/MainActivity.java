@@ -71,7 +71,12 @@ public class MainActivity extends AppCompatActivity {
                 check.setVisibility(View.GONE);
                 goTo.setVisibility(View.VISIBLE);
                 rest.setVisibility(View.GONE);
-                hintLabel.setText("Select the part you want to learn about");
+                NoseText.setBackgroundResource(R.drawable.border);
+                MouthText.setBackgroundResource(R.drawable.border);
+                TracheaText.setBackgroundResource(R.drawable.border);
+                LungsText.setBackgroundResource(R.drawable.border);
+                DiaphragmText.setBackgroundResource(R.drawable.border);
+                hintLabel.setText("Press on explain to learn about each part");
             }
             if (!NoseCheck) {
                 NoseText.setBackgroundResource(R.drawable.border_error);
